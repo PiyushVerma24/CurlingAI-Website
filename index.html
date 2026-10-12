@@ -930,7 +930,7 @@
   <a href="#top" class="nav-logo">Curling<span>AI</span></a>
   <ul class="nav-links">
     <li><a href="#top">Home</a></li>
-    <li><a href="#products" class="active">Products</a></li>
+    <li><a href="#lead-product" class="active">Products</a></li>
     <li><a href="#services" onclick="openServicesTab()">Services</a></li>
     <li><a href="#testimonials">Work</a></li>
     <li><a href="#team">Team</a></li>
@@ -943,7 +943,7 @@
 <div class="nav-mobile-menu" id="mobileMenu">
   <button class="nav-mobile-close" onclick="closeMobileMenu()">✕</button>
   <a href="#top" onclick="closeMobileMenu()">Home</a>
-  <a href="#products" onclick="closeMobileMenu()">Products</a>
+  <a href="#lead-product" onclick="closeMobileMenu()">Products</a>
   <a href="#services" onclick="openServicesTab();closeMobileMenu()">Services</a>
   <a href="#testimonials" onclick="closeMobileMenu()">Clients</a>
   <a href="#team" onclick="closeMobileMenu()">Team</a>
@@ -984,7 +984,7 @@
 </div>
 
 <!-- ══ QORD — LEAD PRODUCT ══ -->
-<section class="product-lead">
+<section class="product-lead" id="lead-product">
   <div class="product-lead-inner">
     <div class="product-lead-left fade-up">
       <div class="product-tag">Lead Product &nbsp;·&nbsp; Beta</div>
@@ -1514,7 +1514,6 @@
 
     <!-- TUSHAR BOHRA -->
     <div class="advisor-card fade-up">
-      <div class="advisor-index">01</div>
       <div class="advisor-photo drop-photo">add<br>photo</div>
       <div class="advisor-name">Tushar Bohra</div>
       <div class="advisor-org">Invexa Capital</div>
@@ -1535,7 +1534,6 @@
 
     <!-- DISHANT KHARBANDA -->
     <div class="advisor-card fade-up" style="transition-delay: 0.12s;">
-      <div class="advisor-index">02</div>
       <div class="advisor-photo drop-photo">add<br>photo</div>
       <div class="advisor-name">Dishant Kharbanda</div>
       <div class="advisor-org">Author · Entrepreneur</div>
@@ -1557,7 +1555,6 @@
 
     <!-- DEEPESH YADAV -->
     <div class="advisor-card fade-up" style="transition-delay: 0.24s;">
-      <div class="advisor-index">03</div>
       <div class="advisor-photo drop-photo">add<br>photo</div>
       <div class="advisor-name">Deepesh Yadav</div>
       <div class="advisor-org">Google</div>
@@ -1587,7 +1584,7 @@
   <div style="display:flex;flex-direction:column;gap:1rem;">
     <a href="https://qord.in" target="_blank" class="btn-primary" style="text-align:center;">Try Qord</a>
     <a href="https://conscientious-spot-553854.framer.app/contact" target="_blank" class="btn-ghost" style="text-align:center;">Talk to us about Justice in Time →</a>
-    <a href="mailto:neha.jain@curlingaisolutions.com" class="btn-ghost" style="text-align:center;">Email us ✉</a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=neha.jain@curlingaisolutions.com" target="_blank" rel="noopener" class="btn-ghost" style="text-align:center;">Email us ✉</a>
     <a href="https://wa.me/919821364050" target="_blank" rel="noopener" class="btn-ghost" style="text-align:center;">WhatsApp us →</a>
   </div>
 </section>
@@ -1613,8 +1610,8 @@
   // highlight the nav item for the section currently in view
   function updateActiveNav() {
     const y = window.scrollY + 140;
-    let current = window.scrollY < 120 ? '#top' : '#products';
-    [['#products','products'],['#testimonials','testimonials'],['#team','team']].forEach(([h,id]) => {
+    let current = window.scrollY < 120 ? '#top' : '#lead-product';
+    [['#testimonials','testimonials'],['#team','team']].forEach(([h,id]) => {
       const el = document.getElementById(id);
       if (el && el.offsetTop <= y) current = h;
     });
